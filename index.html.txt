@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Wedding Invitation</title>
+    <style>
+        body {
+            text-align: center;
+            font-family: Arial;
+            background: #fff0f5;
+        }
+        h1 {
+            color: #d63384;
+        }
+        .card {
+            margin-top: 100px;
+        }
+    </style>
+</head>
+<body>
+    <div class="card">
+        <h1>You're Invited 💍</h1>
+        <h2>Lakshan & Partner</h2>
+        <p>Join us to celebrate our wedding</p>
+        <p><b>Date:</b> 25th December 2026</p>
+        <p><b>Location:</b> Colombo</p>
+    </div>
+</body>
+</html>
