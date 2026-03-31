@@ -1,28 +1,533 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>Wedding Invitation</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+    <title>Wickramaarachchi & Handapangoda Wedding Invitation</title>
     <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
         body {
+            background: #fef3e8;  /* warm ivory background */
+            background-image: radial-gradient(circle at 10% 20%, rgba(255, 215, 180, 0.2) 2%, transparent 2.5%),
+                              radial-gradient(circle at 85% 70%, rgba(210, 150, 110, 0.15) 1.8%, transparent 2%);
+            background-size: 48px 48px, 32px 32px;
+            font-family: 'Segoe UI', 'Georgia', 'Times New Roman', serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            padding: 2rem 1rem;
+        }
+
+        /* main invitation card */
+        .invitation-card {
+            max-width: 820px;
+            width: 100%;
+            background: #fffef7;
+            border-radius: 56px 56px 64px 64px;
+            box-shadow: 0 30px 50px rgba(100, 50, 20, 0.2), 0 8px 20px rgba(0,0,0,0.08);
+            overflow: hidden;
+            transition: all 0.2s ease;
+            border: 1px solid #fad4b5;
+        }
+
+        /* ornamental top border */
+        .card-border {
+            height: 12px;
+            background: linear-gradient(90deg, #c79a6e, #e9c9a7, #c49a6c, #e9c9a7, #b58254);
+        }
+
+        /* inner content */
+        .invitation-content {
+            padding: 2.2rem 2rem 2.5rem;
+        }
+
+        /* decorative lines & flourishes */
+        .flourish {
             text-align: center;
-            font-family: Arial;
-            background: #fff0f5;
+            font-size: 1.6rem;
+            letter-spacing: 8px;
+            color: #bf8f60;
+            font-weight: normal;
+            margin: 0.5rem 0;
         }
-        h1 {
-            color: #d63384;
+
+        .parents-row {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 1.5rem;
+            text-align: center;
+            margin: 1.2rem 0 1rem;
+            font-size: 1.2rem;
+            font-weight: 500;
+            color: #4a2e1e;
         }
-        .card {
-            margin-top: 100px;
+
+        .parents-block {
+            flex: 1;
+            background: #fff8f0;
+            padding: 0.8rem 0.5rem;
+            border-radius: 40px;
+            border: 1px dashed #e2c7aa;
+        }
+
+        .and-symbol {
+            font-size: 1.8rem;
+            font-family: 'Georgia', serif;
+            color: #bc7a4a;
+            align-self: center;
+        }
+
+        .request-line {
+            font-size: 1.2rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: #5d3a22;
+            margin: 1rem 0 0.5rem;
+            font-weight: 500;
+            word-break: keep-all;
+        }
+
+        .guest-name {
+            font-size: 1.9rem;
+            font-weight: 700;
+            font-family: 'Georgia', 'Times New Roman', serif;
+            color: #a6522c;
+            background: linear-gradient(135deg, #9b4e2a, #c46a3b);
+            background-clip: text;
+            -webkit-background-clip: text;
+            color: transparent;
+            text-shadow: 0 1px 1px rgba(255,235,200,0.8);
+            margin: 0.3rem 0;
+            word-break: break-word;
+            padding: 0 0.25rem;
+        }
+
+        .invitation-message {
+            font-size: 1.2rem;
+            font-style: italic;
+            color: #6d4c32;
+            margin: 0.5rem 0 0.8rem;
+        }
+
+        .marriage-line {
+            font-size: 1.55rem;
+            font-weight: 600;
+            background: #fdeadb;
+            display: inline-block;
+            padding: 0.2rem 1.5rem;
+            border-radius: 60px;
+            color: #7c4a2a;
+            margin: 1rem 0 1rem;
+        }
+
+        .date-details {
+            background: #fdf3e9;
+            border-radius: 48px;
+            padding: 1.2rem 1rem;
+            margin: 1.5rem 0;
+            border: 1px solid #f0ddcc;
+        }
+
+        .day-date {
+            font-size: 1.8rem;
+            font-weight: 800;
+            letter-spacing: 2px;
+            color: #a75831;
+        }
+
+        .full-date {
+            font-size: 1.2rem;
+            font-weight: 500;
+            color: #3e2a1c;
+            margin-top: 0.3rem;
+        }
+
+        .venue-block {
+            margin: 1.2rem 0;
+        }
+
+        .venue-name {
+            font-size: 1.6rem;
+            font-weight: 700;
+            color: #86532e;
+            text-transform: uppercase;
+        }
+
+        .venue-address {
+            font-size: 1rem;
+            color: #4d3a28;
+            background: #fff4e8;
+            display: inline-block;
+            padding: 0.2rem 1rem;
+            border-radius: 30px;
+        }
+
+        .time-info {
+            font-size: 1.15rem;
+            background: #f6e5d8;
+            padding: 0.5rem;
+            border-radius: 40px;
+            width: 85%;
+            margin: 0.7rem auto;
+            font-weight: 500;
+        }
+
+        .poruwa {
+            font-weight: bold;
+            color: #b2592e;
+            background: #fffbee;
+            display: inline-block;
+            padding: 0.2rem 1rem;
+            border-radius: 50px;
+        }
+
+        .rsvp {
+            margin-top: 1.6rem;
+            font-size: 1rem;
+            border-top: 2px dotted #e2c29b;
+            padding-top: 1.3rem;
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            align-items: baseline;
+            gap: 1rem;
+        }
+
+        .rsvp-date {
+            background: #e5cfb5;
+            padding: 0.3rem 1rem;
+            border-radius: 40px;
+            font-weight: 600;
+            color: #4a2a14;
+        }
+
+        .contact-numbers {
+            font-size: 1.1rem;
+            font-weight: 500;
+            letter-spacing: 1px;
+            word-break: keep-all;
+        }
+
+        .contact-numbers span {
+            background: #fff0e2;
+            padding: 0.2rem 0.6rem;
+            border-radius: 30px;
+            margin: 0 4px;
+        }
+
+        /* special guest highlight */
+        .guest-wrapper {
+            margin: 0.5rem 0 0.2rem;
+        }
+
+        /* responsive */
+        @media (max-width: 600px) {
+            .invitation-content {
+                padding: 1.5rem;
+            }
+            .guest-name {
+                font-size: 1.4rem;
+            }
+            .day-date {
+                font-size: 1.4rem;
+            }
+            .marriage-line {
+                font-size: 1.2rem;
+            }
+            .parents-row {
+                flex-direction: column;
+                gap: 0.5rem;
+            }
+            .and-symbol {
+                display: none;
+            }
+            .rsvp {
+                flex-direction: column;
+                align-items: center;
+                text-align: center;
+            }
+        }
+
+        footer {
+            background: #f9efE4;
+            text-align: center;
+            font-size: 0.7rem;
+            padding: 0.8rem;
+            color: #b28b62;
+            border-top: 1px solid #eedbc8;
         }
     </style>
 </head>
 <body>
-    <div class="card">
-        <h1>You're Invited 💍</h1>
-        <h2>Lakshan & Partner</h2>
-        <p>Join us to celebrate our wedding</p>
-        <p><b>Date:</b> 25th December 2026</p>
-        <p><b>Location:</b> Colombo</p>
+    <div class="invitation-card">
+        <div class="card-border"></div>
+        <div class="invitation-content">
+            <div class="flourish">✧༺♥༻✧</div>
+            
+            <!-- Host families as per original invitation text -->
+            <div class="parents-row">
+                <div class="parents-block">MR. & MRS. WICKRAMAARACHCI</div>
+                <div class="and-symbol">✦</div>
+                <div class="parents-block">MR. & MRS. HANDAPANGODA</div>
+            </div>
+            
+            <div class="request-line">REQUEST THE PRESENCE AND BLESSINGS OF</div>
+            
+            <!-- DYNAMIC GUEST SECTION: parameters injected based on mapping & name selection -->
+            <div class="guest-wrapper" id="dynamicGuestBlock">
+                <!-- The guest name will be inserted here by JavaScript (from URL param or default) -->
+                <div class="guest-name" id="guestNameDisplay">MR. & MRS. / FAMILY</div>
+            </div>
+            
+            <div class="invitation-message">✨ to celebrate the marriage of their children ✨</div>
+            
+            <div class="marriage-line">💍 WEDDING CELEBRATION 💍</div>
+            
+            <div class="date-details">
+                <div class="day-date">🌿 THURSDAY 30TH APRIL 2026 🌿</div>
+                <div class="full-date">திருமண நாள் | විවාහ දිනය</div>
+            </div>
+            
+            <div class="venue-block">
+                <div class="venue-name">🏛️ THE VYNI HALL</div>
+                <div class="venue-address">HOTEL GRAND THEVNI<br>(PADUKKA ROAD, INGIRIYA)</div>
+            </div>
+            
+            <div class="time-info">
+                🕊️ FROM 9.00 A.M. TO 4.00 P.M. 🕊️<br>
+                <span class="poruwa">🌸 PORUWA CEREMONY AT 9.40 A.M. 🌸</span>
+            </div>
+            
+            <div class="rsvp">
+                <div class="rsvp-date">📅 RSVP BEFORE 10TH OF APRIL 2026 📅</div>
+                <div class="contact-numbers">
+                    📞 <span>AYODYA - 0770048727</span> &nbsp;|&nbsp; <span>LAKSHAN - 0787621872</span>
+                </div>
+            </div>
+            <div class="flourish">♡𓂃 𓈒𓏸 𓍢ִ໋🌺𓂃𓈒</div>
+        </div>
+        <footer>
+            With love & blessings — Wickramaarachchi & Handapangoda families
+        </footer>
     </div>
+
+    <script>
+        // --------------------------------------------------------------
+        // MAPPING as given: parameter keys to full names
+        // (keys as they appear in the URL fragment/query? We will parse 'guest' or 'name' parameter,
+        // and also support direct mapping using the provided codes like "$Thus@21e" etc.
+        // According to the prompt: "give this to above format using pass with this parameter using name"
+        // and we have an object with codes like "$Thus@21e": "Mr.Thusitha Withanage", etc.
+        // We need to accept a URL parameter (e.g., ?guest=$Thus@21e or ?code=$Thus@21e or ?name=...)
+        // Additionally, we can also accept a plaintext name. To be user-friendly, we support:
+        // 1) parameter 'code' -> lookup the mapping object.
+        // 2) parameter 'guest' -> also lookup mapping, fallback to raw string.
+        // 3) parameter 'name' -> direct display.
+        // If none found, show default MR. & MRS. / FAMILY as placeholder, but with invitation spirit.
+        // Also we want to match the elegant format of the original invite.
+        // --------------------------------------------------------------
+        
+        const nameMapping = {
+            "$Thus@21e": "Mr. Thusitha Withanage",
+            "aMlMarShn": "Mr. Amila Marasinghe",
+            "AsngMundr": "Mr. Asanga Muneendradasa",
+            "$ad@uWzN": "Mr. Sandaruwan Wanniarachchi",
+            "0Mh!n$dGu": "Mr. Mihindu Ranaweera",
+            "J@kariW!s": "Mr. Janaka Kariyawasam",
+            "MPEOCHode": "Mr. Mario Mendis",
+            "SHKLPESHA": "Mr. Lakshan Handapangoda",
+            "QWSDOBRTH": "Mr. Baratha Basnayake",
+            "~P00r!naL": "Mr. Poorna Lakshan",
+            "DULPWLKEY": "Ms. Dulki Fernando",
+            "W@veen!pli": "Ms. Vinishya Palihawadana",
+            "BenEWSSRI": "Mr. Benhar Siribalaraj",
+            "$s@Apmat!B": "Mr. Sampath Liyanage and Family",
+            "MPOTJTHRY": "Mrs. Maithri Senanayake"
+        };
+        
+        // Helper: get URL parameter by name (case-insensitive? just standard)
+        function getUrlParam(param) {
+            const urlParams = new URLSearchParams(window.location.search);
+            return urlParams.get(param);
+        }
+        
+        // Determine guest display name
+        function getGuestDisplayName() {
+            // Priority order: 'code' -> mapping lookup, then 'guest' -> mapping lookup, then 'name' -> direct
+            let codeParam = getUrlParam('code');
+            if (codeParam && nameMapping[codeParam]) {
+                return nameMapping[codeParam];
+            }
+            // maybe guest param with code key
+            let guestParam = getUrlParam('guest');
+            if (guestParam && nameMapping[guestParam]) {
+                return nameMapping[guestParam];
+            }
+            // if name param exists, use as raw name (properly formatted)
+            let nameParam = getUrlParam('name');
+            if (nameParam && nameParam.trim() !== "") {
+                // decode if needed (but plain text)
+                return decodeURIComponent(nameParam.trim());
+            }
+            // Also if parameter 'to' for direct guest?
+            let toParam = getUrlParam('to');
+            if (toParam && toParam.trim() !== "") {
+                return decodeURIComponent(toParam.trim());
+            }
+            // check if any parameter matches a key in mapping (like dynamic key pass)
+            for (let [key, value] of Object.entries(nameMapping)) {
+                if (getUrlParam(key) !== null) {
+                    // if a parameter exactly equals the key? or just presence? but we need value.
+                    // safer: if key exists as parameter and its value is not needed? for instance ?$Thus@21e=true
+                    // not perfect, but we'll check if param key exists in mapping and parameter value is 'true' or empty
+                    let val = getUrlParam(key);
+                    if (val !== null && (val === '' || val === '1' || val === 'true')) {
+                        return value;
+                    }
+                }
+            }
+            // default graceful invitation: original style shows "MR. & MRS. / FAMILY" but also make it festive
+            // but we can also display a generic respectful title.
+            return "MR. & MRS. / MISS. / FAMILY";
+        }
+        
+        // Additional enhancement: if guest name includes "and Family" we preserve elegance.
+        // Also ensure the name style matches uppercase/lowercase mix but original invite uses caps?
+        // We'll keep the mapped names as they are (title case). Also for very long names, wrap nicely.
+        
+        // Also, provide ability to pass multiple? but single guest.
+        // One more: if the name is not from mapping but we want to display like "MR. JOHN DOE"
+        // we will display as is but we also can prefix with MR./MRS. if needed? Not required, but keep formatting.
+        
+        // Also we want to make the card extra special: if guest is "Mr. Lakshan Handapangoda" or any special,
+        // show matching flourish.
+        function updateGuestName() {
+            const guestNameElem = document.getElementById('guestNameDisplay');
+            if (guestNameElem) {
+                let finalName = getGuestDisplayName();
+                // Edge: If finalName is default and we might want to show typical "MR. & MRS. / FAMILY" as original invite style
+                if (finalName === "MR. & MRS. / MISS. / FAMILY") {
+                    // mirror original invitation exactly: MR.&MRS./MR./MRS./MISS./FAMILY
+                    finalName = "MR. & MRS. / MR. / MRS. / MISS. / FAMILY";
+                }
+                // Capitalization touch - keep as mapped but ensure no double spaces
+                finalName = finalName.replace(/\s+/g, ' ').trim();
+                guestNameElem.innerText = finalName;
+                
+                // tiny extra: if the name contains "Lakshan Handapangoda" or specific names, add subtle effect
+                if (finalName.toLowerCase().includes("lakshan handapangoda")) {
+                    const wrapper = document.querySelector('.guest-wrapper');
+                    if (wrapper) {
+                        wrapper.style.transition = "0.3s";
+                        wrapper.style.transform = "scale(1.01)";
+                    }
+                }
+            }
+        }
+        
+        // also support hash parameters? just in case someone uses #? but use search.
+        // additionally fallback if no parameters at all: keep original standard invitation style "MR.&MRS./MR./MRS./MISS./FAMILY"
+        // which matches the wording from original image: "MR.&MRS./MR./MRS./MISS./FAMILY"
+        
+        // To respect exactly the phrasing from the original jpeg: it says 
+        // "REQUEST THE PRESENCE AND BLESSINGS OF MR.&MRS./MR./MRS./MISS./FAMILY"
+        // So the default dynamic display matches that style.
+        // Also we must include the "TO CELEBRATE THE MARRIAGE OF THEIR CHILDREN" which is present.
+        
+        // Additional enhancement: read from localStorage? not needed but robust.
+        // Also allow a parameter 'guest_raw' for any custom text.
+        let customRaw = getUrlParam('guest_raw');
+        if (customRaw && customRaw.trim() !== "") {
+            document.getElementById('guestNameDisplay').innerText = decodeURIComponent(customRaw.trim());
+        } else {
+            updateGuestName();
+        }
+        
+        // For any manual adjustment: Also support 'honoree'
+        let honoree = getUrlParam('honoree');
+        if (honoree && honoree.trim() !== "") {
+            let mapped = nameMapping[honoree] || decodeURIComponent(honoree);
+            document.getElementById('guestNameDisplay').innerText = mapped;
+        }
+        
+        // Bonus: tiny ceremonial animation
+        const card = document.querySelector('.invitation-card');
+        if (card) {
+            card.style.opacity = '0';
+            card.style.transform = 'translateY(20px)';
+            setTimeout(() => {
+                card.style.transition = 'opacity 0.7s ease, transform 0.5s ease';
+                card.style.opacity = '1';
+                card.style.transform = 'translateY(0)';
+            }, 100);
+        }
+        
+        // Also verify time and venue are exactly as original: "AT THE THEVNIHALL" but we used "THE VYNI HALL" but
+        // based on jpeg: "AT THE THEVNIHALL HOTEL GRAND THEVNI (PADUKKA ROAD, INGIRIYA)". To maintain consistency we used "THE VYNI HALL"
+        // but original text says "THE THEVNIHALL". Actually the jpeg reads: "AT THE THEVNIHALL HOTEL GRAND THEVNI" 
+        // it might be a name. Let's adjust to exactly replicate the original invitation as per image content:
+        // The image shows: "AT THE THEVNIHALL" on one line, "HOTEL GRAND THEVNI" next line. We'll reflect exactly.
+        // Fixing venue details to be pixel-perfect with the provided image.
+        const venueElement = document.querySelector('.venue-name');
+        const addressElement = document.querySelector('.venue-address');
+        if (venueElement) {
+            venueElement.innerHTML = '🏛️ THE THEVNIHALL 🏛️';
+        }
+        if (addressElement) {
+            addressElement.innerHTML = 'HOTEL GRAND THEVNI<br>(PADUKKA ROAD, INGIRIYA)';
+        }
+        
+        // Also ensure Poruwa ceremony timing as 9.40 A.M.
+        const timeDiv = document.querySelector('.time-info');
+        if (timeDiv && !timeDiv.innerHTML.includes('PORUWA CEREMONY AT 9.40 A.M.')) {
+            timeDiv.innerHTML = `🕊️ FROM 9.00 A.M. TO 4.00 P.M. 🕊️<br>
+            <span class="poruwa">🌸 PORUWA CEREMONY AT 9.40 A.M. 🌸</span>`;
+        }
+        
+        // Update rsvp date format and names as per original: RSVP BEFORE 10TH OF APRIL 2026
+        const rsvpDiv = document.querySelector('.rsvp-date');
+        if (rsvpDiv) {
+            rsvpDiv.innerHTML = '📅 RSVP BEFORE 10TH OF APRIL 2026 📅';
+        }
+        const contactsDiv = document.querySelector('.contact-numbers');
+        if (contactsDiv) {
+            contactsDiv.innerHTML = '📞 <span>AYODYA - 0770048727</span> &nbsp;|&nbsp; <span>LAKSHAN - 0787621872</span>';
+        }
+        
+        // also ensure the parents names as exactly in original: MR.&MRS.WICKRAMAARACHCI and MR.&MRS.HANDAPANGODA
+        const parents = document.querySelectorAll('.parents-block');
+        if (parents.length >= 2) {
+            parents[0].innerHTML = 'MR. & MRS. WICKRAMAARACHCI';
+            parents[1].innerHTML = 'MR. & MRS. HANDAPANGODA';
+        }
+        
+        // marriage of their children line stays
+        const marriageLine = document.querySelector('.marriage-line');
+        if (marriageLine) {
+            marriageLine.innerHTML = '💍 TO CELEBRATE THE MARRIAGE OF THEIR CHILDREN 💍';
+        }
+        
+        // small bonus: update guest display if the mapping includes multiple words and ensure it respects the invite tone
+        // re-run guest mapping if any changes made via script after dom modifications, but we already set.
+        // re-run guest display but careful not to override custom.
+        if (!customRaw && !honoree) {
+            let final = getGuestDisplayName();
+            if (final === "MR. & MRS. / MISS. / FAMILY") final = "MR. & MRS. / MR. / MRS. / MISS. / FAMILY";
+            document.getElementById('guestNameDisplay').innerText = final;
+        }
+        
+        // Also provide graceful note: If query parameter contains name directly like ?name=Mr.Sunil+Perera
+        // we must ensure that it shows accordingly. Our previous logic covers 'name' parameter.
+        // Additional to show 'family' representation from mapping.
+        // Add one more: If user passes "family=1" with code, fine.
+        console.log("Wedding invitation loaded — blessings to the couple!");
+    </script>
 </body>
 </html>
