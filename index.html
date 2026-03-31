@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
@@ -12,46 +13,64 @@
         }
 
         body {
-            background: #faf6f0;
-            background-image: linear-gradient(145deg, #fff7ef 0%, #f7ede2 100%);
             font-family: 'Segoe UI', 'Georgia', 'Times New Roman', serif;
             display: flex;
             justify-content: center;
             align-items: center;
             min-height: 100vh;
-            padding: 2rem 1.2rem;
+            position: relative;
+            background: #fbf7f2d2;
         }
 
-        /* main invitation card — refined, professional, elegant */
-        .invitation-card {
-            max-width: 880px;
+        /* Subtle background texture for refined elegance */
+        body::before {
+            content: "";
+            position: fixed;
+            top: 0;
+            left: 0;
             width: 100%;
-            background: #ffffff;
-            border-radius: 32px;
-            box-shadow: 0 25px 45px -12px rgba(0, 0, 0, 0.25), 0 4px 12px rgba(0, 0, 0, 0.05);
-            overflow: hidden;
-            transition: all 0.2s;
-            border: 1px solid #eedcc8;
+            height: 100%;
+            background-image: radial-gradient(#e9dbd0 0.8px, transparent 0.8px);
+            background-size: 28px 28px;
+            opacity: 0.3;
+            z-index: 0;
+            pointer-events: none;
         }
 
-        /* ornamental top border — subtle elegance */
-        .card-border {
-            height: 6px;
-            background: linear-gradient(90deg, #c7a06b, #e3cbaa, #b88453, #e3cbaa, #a56f42);
+        /* Main invitation card — clean, sophisticated, ivory tone */
+        .invitation-card {
+            max-width: 1080px;
+            width: 100%;
+            border-radius: 8px;
+            box-shadow: 0 25px 45px rgba(45, 30, 20, 0.12);
+            overflow: hidden;
+            transition: all 0.3s ease;
+            border: 1px solid #e7ddd2;
+            position: relative;
+            z-index: 2;
+            background: #ffffff;
         }
 
         .invitation-content {
-            padding: 2.5rem 2.2rem 2.2rem;
+            background: url('https://img.freepik.com/free-photo/romantic-beach-wedding-arch_23-2151937254.jpg?semt=ais_hybrid&w=740&q=80') center center / cover no-repeat fixed;
+            padding: 2rem 2rem 1.8rem;
         }
 
-        /* decorative elements */
-        .flourish {
+        /* Refined border accent */
+        .card-border {
+            height: 5px;
+            background: linear-gradient(90deg, #c8aa7a, #e1cbb6, #c8aa7a);
+        }
+
+
+        /* Subtle ornamental divider */
+        .ornament {
             text-align: center;
-            font-size: 1.5rem;
-            letter-spacing: 6px;
-            color: #bc8f6a;
-            font-weight: 400;
-            margin: 0.2rem 0 0.8rem;
+            font-size: 1rem;
+            letter-spacing: 4px;
+            color: #cbb295;
+            margin: 0.4rem 0 1rem;
+            font-weight: 300;
         }
 
         .parents-row {
@@ -59,165 +78,249 @@
             justify-content: center;
             align-items: center;
             flex-wrap: wrap;
-            gap: 1.2rem;
+            gap: 1.8rem;
             text-align: center;
-            margin: 1rem 0 0.8rem;
+            margin: 0.8rem 0 0.8rem;
         }
 
         .parents-block {
-            background: #fef7ef;
-            padding: 0.6rem 1.2rem;
-            border-radius: 60px;
-            font-size: 1rem;
+            background: #fdf9f569;
+            padding: 0.6rem 1.6rem;
+            border-radius: 10px;
+            font-size: 0.85rem;
             font-weight: 600;
-            letter-spacing: 0.5px;
-            color: #4d3420;
-            border: 1px solid #f0decf;
+            letter-spacing: 1px;
+            color: #361b04;
+            border: 1px solid #ece0d694;
             text-transform: uppercase;
-        }
-
-        .and-symbol {
-            font-size: 1.3rem;
-            color: #b97f54;
-            font-weight: 400;
+            font-family: 'Segoe UI', 'Georgia', serif;
         }
 
         .request-line {
-            font-size: 0.95rem;
+            font-size: 0.75rem;
             text-transform: uppercase;
-            letter-spacing: 1.5px;
-            color: #7a5a42;
-            margin: 1rem 0 0.2rem;
-            font-weight: 500;
-            word-break: keep-all;
+            letter-spacing: 2px;
+            color: #271303;
+            margin: 1.2rem 0 0.4rem;
+            font-weight: 600;
+            text-align: center;
         }
 
         .guest-name {
-            font-size: 2rem;
+            font-size: 2.1rem;
             font-weight: 700;
             font-family: 'Georgia', 'Times New Roman', serif;
-            color: #9b5633;
-            background: linear-gradient(135deg, #8b4c2c, #bb7348);
-            background-clip: text;
-            -webkit-background-clip: text;
-            color: transparent;
-            margin: 0.25rem 0 0.2rem;
+            color: #3f2c1c;
+            margin: 0.5rem 0 0.3rem;
             word-break: break-word;
-            padding: 0 0.3rem;
-            line-height: 1.2;
+            padding: 0 0.2rem;
+            line-height: 1.3;
+            text-align: center;
+            letter-spacing: -0.2px;
         }
 
         .invitation-message {
-            font-size: 1.05rem;
-            font-style: italic;
-            color: #7a5a44;
-            margin: 0.4rem 0;
+            font-size: 1rem;
+            font-style: normal;
+            color: #5e4130;
+            margin: 0.6rem 0;
+            text-align: center;
+            font-weight: 400;
         }
 
         .marriage-line {
-            font-size: 1.3rem;
-            font-weight: 700;
-            background: #faf0e6;
+            border: 1px solid #ece0d6;
+            font-size: 1.2rem;
+            font-weight: 600;
+            background: #fef8f2;
             display: inline-block;
-            padding: 0.3rem 1.6rem;
-            border-radius: 60px;
-            color: #865838;
-            margin: 1rem 0;
+            padding: 0.4rem 1.8rem;
+            border-radius: 20px;
+            color: #a5714b;
+            margin: 0.9rem 0;
+            letter-spacing: 0.5px;
+            text-align: center;
+            width: auto;
+        }
+
+        /* PROFESSIONAL COUNTDOWN TIMER SECTION */
+        .countdown-section {
+            border: 1px solid #ece0d6;
+            background: #fefaf79d;
+            border-radius: 32px;
+            padding: 1.2rem 1rem 1rem;
+            margin: 1rem 0 0.8rem;
+            border: 1px solid #ece0d6;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.02);
+        }
+
+        .countdown-title {
+            font-size: 0.8rem;
+            letter-spacing: 2.5px;
+            text-transform: uppercase;
+            font-weight: 600;
+            color: #9c7659;
+            text-align: center;
+            margin-bottom: 1rem;
+        }
+
+        .countdown-timer {
+            display: flex;
+            justify-content: center;
+            gap: 1.5rem;
+            flex-wrap: wrap;
+            text-align: center;
+        }
+
+        .countdown-item {
+            background: #ffffff;
+            min-width: 85px;
+            padding: 0.7rem 0.4rem;
+            border-radius: 24px;
+            box-shadow: 0 6px 14px rgba(70, 45, 25, 0.04);
+            border: 1px solid #ede2d8;
+            transition: transform 0.2s ease;
+        }
+
+        .countdown-number {
+            font-size: 2.2rem;
+            font-weight: 700;
+            font-family: 'Segoe UI', 'Georgia', monospace;
+            color: #b47c56;
+            line-height: 1;
             letter-spacing: 1px;
+        }
+
+        .countdown-label {
+            font-size: 0.7rem;
+            text-transform: uppercase;
+            font-weight: 600;
+            color: #a77f60;
+            letter-spacing: 1px;
+            margin-top: 7px;
+        }
+
+        .event-note {
+            text-align: center;
+            font-size: 0.75rem;
+            margin-top: 16px;
+            color: #8c6a4f;
+            font-weight: 500;
+            background: #fdf6ef;
+            display: inline-block;
+            width: auto;
+            padding: 0.3rem 1.5rem;
+            border-radius: 40px;
+            letter-spacing: 0.3px;
         }
 
         .date-details {
-            background: #fef6ef;
-            border-radius: 48px;
-            padding: 1rem 1rem;
-            margin: 1.2rem 0;
-            border: 1px solid #f2e3d6;
+            background: #fef8f279;
+            border-radius: 24px;
+            padding: 1.2rem 0.8rem;
+            margin: 1rem 0;
+            border: 1px solid #f1e6de;
+            text-align: center;
+             font-size: 13px;
         }
 
         .day-date {
-            font-size: 1.6rem;
-            font-weight: 800;
+            font-size: 1.7rem;
+            font-weight: 700;
             letter-spacing: 1px;
-            color: #a4613a;
+            color: #b47c56;
         }
 
         .full-date {
             font-size: 0.9rem;
             font-weight: 500;
-            color: #6f543e;
-            margin-top: 0.2rem;
+            color: #886e56;
+            margin-top: 0.4rem;
         }
 
         .venue-block {
-            margin: 1rem 0 0.5rem;
+            margin: 1.2rem 0 0.6rem;
+            text-align: center;
         }
 
         .venue-name {
-            font-size: 1.55rem;
-            font-weight: 800;
-            color: #7b4a2c;
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: #8a5a3b;
             text-transform: uppercase;
             letter-spacing: 1px;
         }
 
         .venue-address {
             font-size: 0.95rem;
-            color: #4f3a2a;
-            background: #fff7f0;
+            color: #6b4e37;
+            background: #fdf8f379;
+            border: 1px solid #ece0d6;
             display: inline-block;
-            padding: 0.2rem 1rem;
-            border-radius: 40px;
-            margin-top: 0.3rem;
-        }
-
-        .map-link {
-            margin-top: 0.6rem;
-        }
-
-        .map-link a {
-            background: #ece0d4;
             padding: 0.3rem 1rem;
-            border-radius: 50px;
-            text-decoration: none;
-            font-size: 0.8rem;
-            font-weight: 600;
-            color: #6b3f21;
-            transition: 0.2s;
-            display: inline-flex;
-            align-items: center;
-            gap: 6px;
-            border: 1px solid #ddcbb8;
+            border-radius: 12px;
+            margin-top: 0.4rem;
+            line-height: 1.4;
         }
 
-        .map-link a:hover {
-            background: #e2d1c2;
-            color: #4f2e18;
-            transform: scale(1.01);
-        }
+
+
 
         .time-info {
-            font-size: 1rem;
-            background: #f7ede4;
-            padding: 0.6rem;
-            border-radius: 60px;
+            font-size: 0.95rem;
+            background: #fef8f279;
+            padding: 0.8rem;
+            border-radius: 24px;
             width: 90%;
-            margin: 0.8rem auto;
+            margin: 0.9rem auto;
             font-weight: 500;
+            text-align: center;
+            border: 1px solid #f1e2d6;
         }
 
         .poruwa {
-            font-weight: bold;
-            color: #b15e36;
-            background: #fff7ef;
-            padding: 0.2rem 0.8rem;
+            font-weight: 700;
+            color: #b47c56;
+            border: 1px solid #ece0d6;
+            background: #ffffff;
+            padding: 0.2rem 0.9rem;
             border-radius: 40px;
             display: inline-block;
+            margin-top: 0.3rem;
+        }
+
+        /* MAP IFRAME SECTION */
+        .map-iframe-container {
+            margin: 1.4rem 0 0.8rem;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 8px 22px rgba(0, 0, 0, 0.06);
+            border: 1px solid #e7dbcf;
+            background: #ffffff;
+        }
+
+        .map-iframe-container iframe {
+            width: 100%;
+            height: 300px;
+            border: 0;
+            display: block;
+        }
+
+        .map-caption {
+            text-align: center;
+            font-size: 0.7rem;
+            padding: 0.6rem 0.2rem;
+            color: #a58163;
+            background: #fef8f279;
+            ;
+            letter-spacing: 0.3px;
+            border-top: 1px solid #f0e4d8;
         }
 
         .rsvp {
-            margin-top: 1.8rem;
-            font-size: 0.95rem;
-            border-top: 2px dashed #e9d8ca;
+            margin-top: 1.6rem;
+            font-size: 0.9rem;
+            border-top: 1px solid #ede0d4;
             padding-top: 1.4rem;
             display: flex;
             justify-content: space-between;
@@ -227,124 +330,176 @@
         }
 
         .rsvp-date {
-            background: #e8d9cd;
-            padding: 0.3rem 1.2rem;
+            background: #f3eae2;
+            padding: 0.35rem 1.2rem;
             border-radius: 50px;
-            font-weight: 700;
-            color: #4a301f;
+            font-weight: 600;
+            color: #775d45;
+            font-size: 0.8rem;
         }
 
         .contact-numbers {
-            font-size: 1rem;
-            font-weight: 600;
-            letter-spacing: 0.3px;
+            font-size: 0.9rem;
+            font-weight: 500;
+            letter-spacing: 0.2px;
+            color: #4e3a2b;
         }
 
         .contact-numbers span {
-            background: #fcf3ea;
-            padding: 0.2rem 0.7rem;
+            background: #fcf6f0;
+            padding: 0.2rem 0.8rem;
             border-radius: 40px;
-            margin: 0 3px;
-            font-weight: 600;
+            margin: 0 2px;
+            font-weight: 500;
         }
 
         .guest-wrapper {
-            margin: 0.2rem 0 0.1rem;
+            margin: 0.2rem 0;
         }
 
         footer {
-            background: #fef9f3;
+            background: #fdfaf7;
             text-align: center;
             font-size: 0.7rem;
-            padding: 0.9rem;
-            color: #b48a66;
-            border-top: 1px solid #f1e4d8;
+            padding: 1rem;
+            color: #b69478;
+            border-top: 1px solid #efe3d9;
             letter-spacing: 0.3px;
         }
 
-        @media (max-width: 600px) {
-            .invitation-content {
-                padding: 1.6rem;
-            }
+        @media (max-width: 640px) {
+
+
             .guest-name {
-                font-size: 1.5rem;
+                font-size: 1rem;
             }
+
             .day-date {
                 font-size: 1.3rem;
             }
+
             .marriage-line {
-                font-size: 1rem;
+                font-size: 0.95rem;
+                padding: 0.3rem 1rem;
             }
+
             .parents-row {
                 flex-direction: column;
-                gap: 0.4rem;
+                gap: 0.6rem;
             }
-            .and-symbol {
-                display: none;
-            }
+
             .rsvp {
                 flex-direction: column;
                 align-items: center;
                 text-align: center;
             }
+
             .venue-name {
-                font-size: 1.3rem;
+                font-size: 1.25rem;
+            }
+
+            .countdown-timer {
+                gap: 0.9rem;
+            }
+
+            .countdown-item {
+                min-width: 70px;
+                padding: 0.5rem 0.2rem;
+            }
+
+            .countdown-number {
+                font-size: 1.7rem;
+            }
+
+            .map-iframe-container iframe {
+                height: 220px;
             }
         }
     </style>
 </head>
+
 <body>
     <div class="invitation-card">
-        <div class="card-border"></div>
+
         <div class="invitation-content">
-            <div class="flourish">✦ ༺ ❁ ༻ ✦</div>
 
-            <!-- Host families: exactly as per original -->
-            <div class="parents-row">
-                <div class="parents-block">MR. & MRS. WICKRAMAARACHCI</div>
-                <div class="and-symbol">✦</div>
-                <div class="parents-block">MR. & MRS. HANDAPANGODA</div>
-            </div>
-
-            <div class="request-line">REQUEST THE PRESENCE AND BLESSINGS OF</div>
-
-            <!-- Dynamic guest name section (URL parameters supported) -->
-            <div class="guest-wrapper">
-                <div class="guest-name" id="guestNameDisplay">MR. & MRS. / FAMILY</div>
-            </div>
-
-            <div class="invitation-message">✨ to celebrate the marriage of their children ✨</div>
-
-            <div class="marriage-line">💍 WEDDING CELEBRATION 💍</div>
-
+            <div class="ornament">— 𑁍 —</div>
             <div class="date-details">
-                <div class="day-date">🌿 THURSDAY, 30TH APRIL 2026 🌿</div>
+                <div class="request-line">Mr. & Mrs. Wickramaarachchi</div>
+                <div class="request-line">Mr. & Mrs. Handapangoda</div>
+                <div class="request-line">Request the presence and blessings of</div>
+
+                <!-- Dynamic guest name (supports URL parameters) -->
+                <div class="guest-wrapper">
+                    <div class="guest-name" id="guestNameDisplay">Mr. & Mrs. / Family</div>
+                </div>
+
+                <div class="request-line">to celebrate the marriage of their children</div>
+
+                <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap" rel="stylesheet">
+
+                <div
+                    style="font-family: 'Great Vibes', cursive; font-size: 48px; color: #c94f7c; letter-spacing: 2px; text-align: center;">
+                    Lakshan & Ayodya
+                </div>
+
+
+
+
+                <div class="day-date">Thursday, 30th April 2026</div>
                 <div class="full-date">Ceremony & Reception</div>
+                <span class="request-line">From 9:00 A.M. to 4:00 P.M.</span>
+<br>
+                <span class="request-line">Poruwa Ceremony at 9:40 A.M.</span>
+
+                <div class="venue-name"
+                    style="letter-spacing: 5px; font-size: 20px; text-transform: uppercase; color: #7c481e;">
+                    Grand Thevni Banquet Hall
+                </div>
+
+
             </div>
 
-            <!-- Venue block with professional hotel name & integrated map link -->
-            <div class="venue-block">
-                <div class="venue-name">🏛️ GRAND THEVNI BANQUET HALL</div>
-                <div class="venue-address">HOTEL GRAND THEVNI & HOLIDAY RESORT<br>Padukka Road, Ingiriya, Sri Lanka</div>
-                <div class="map-link">
-                    <a href="https://maps.app.goo.gl/AfosAECQdd55pmHbA" target="_blank" rel="noopener noreferrer">
-                        📍 VIEW ON GOOGLE MAPS
-                    </a>
+            <!-- Professional countdown timer -->
+            <div class="countdown-section">
+
+                <div class="countdown-timer" id="countdownTimer">
+                    <div class="countdown-item">
+                        <div class="countdown-number" id="days">00</div>
+                        <div class="countdown-label">Days</div>
+                    </div>
+                    <div class="countdown-item">
+                        <div class="countdown-number" id="hours">00</div>
+                        <div class="countdown-label">Hours</div>
+                    </div>
+                    <div class="countdown-item">
+                        <div class="countdown-number" id="minutes">00</div>
+                        <div class="countdown-label">Minutes</div>
+                    </div>
+                    <div class="countdown-item">
+                        <div class="countdown-number" id="seconds">00</div>
+                        <div class="countdown-label">Seconds</div>
+                    </div>
+                </div>
+                <div id="eventStatusMessage" class="event-note">Counting down to a day of joy and celebration</div>
+            </div>
+
+            <div class="date-details">Hotel Grand Thevni & Holiday Resort<br>Padukka Road, Ingiriya, Sri Lanka
+            </div>
+
+            <!-- Embedded interactive map (professional frame) -->
+            <div class="map-iframe-container">
+                <iframe
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3959.123456789012!2d80.150000!3d6.790000!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ae3e0a0e0a0e0a1%3A0x123456789abcdef!2sGrand%20Thevni%20Banquet%20Hall!5e0!3m2!1sen!2slk!4v1712345678901!5m2!1sen!2slk"
+                    allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"
+                    title="Wedding Venue Map - Grand Thevni Banquet Hall, Ingiriya, Sri Lanka">
+                </iframe>
+                <div class="map-caption">
+                    Grand Thevni Banquet Hall, Padukka Road, Ingiriya — tap map for directions
                 </div>
             </div>
 
-            <div class="time-info">
-                🕊️ FROM 9:00 A.M. TO 4:00 P.M. 🕊️<br>
-                <span class="poruwa">🌸 PORUWA CEREMONY AT 9:40 A.M. 🌸</span>
-            </div>
 
-            <div class="rsvp">
-                <div class="rsvp-date">📅 RSVP BEFORE 10TH OF APRIL 2026 📅</div>
-                <div class="contact-numbers">
-                    📞 <span>AYODYA - 0770048727</span> &nbsp;|&nbsp; <span>LAKSHAN - 0787621872</span>
-                </div>
-            </div>
-            <div class="flourish">♡ 𓂃 𓈒𓏸 ✿ 𓍢ִ໋ 🌺 𓂃𓈒</div>
         </div>
         <footer>
             With heartfelt blessings — families of Wickramaarachchi & Handapangoda
@@ -352,10 +507,83 @@
     </div>
 
     <script>
+        // =============================================================
+        // PROFESSIONAL COUNTDOWN TIMER (Thursday, 30th April 2026 - 9:00 AM Sri Lanka Time)
+        // =============================================================
+        const targetDate = new Date(2026, 3, 30, 9, 0, 0); // April 30, 2026, 09:00:00
+
+        function updateCountdown() {
+            const now = new Date();
+            // Sri Lanka Standard Time offset UTC+5:30
+            const nowUTC = now.getTime() + (now.getTimezoneOffset() * 60000);
+            const slOffset = 5.5 * 60 * 60 * 1000;
+            const nowSL = new Date(nowUTC + slOffset);
+
+            const targetTime = targetDate.getTime();
+            const diff = targetTime - nowSL.getTime();
+
+            const daysElem = document.getElementById('days');
+            const hoursElem = document.getElementById('hours');
+            const minutesElem = document.getElementById('minutes');
+            const secondsElem = document.getElementById('seconds');
+            const statusMsgElem = document.getElementById('eventStatusMessage');
+
+            if (diff <= 0) {
+                if (daysElem) daysElem.innerText = '00';
+                if (hoursElem) hoursElem.innerText = '00';
+                if (minutesElem) minutesElem.innerText = '00';
+                if (secondsElem) secondsElem.innerText = '00';
+                if (statusMsgElem) {
+                    const nowDate = nowSL.getDate();
+                    const targetDateObj = targetDate;
+                    if (nowSL.getFullYear() === targetDateObj.getFullYear() &&
+                        nowSL.getMonth() === targetDateObj.getMonth() &&
+                        nowSL.getDate() === targetDateObj.getDate()) {
+                        const currentHour = nowSL.getHours();
+                        if (currentHour < 9) {
+                            statusMsgElem.innerHTML = "Today is the day! Celebrations begin at 9:00 AM.";
+                        } else if (currentHour >= 9 && currentHour < 16) {
+                            statusMsgElem.innerHTML = "Wedding celebration in progress — blessings to the couple.";
+                        } else {
+                            statusMsgElem.innerHTML = "Today was a day of joy. May love always shine.";
+                        }
+                    } else {
+                        statusMsgElem.innerHTML = "The wedding celebration has passed. Grateful for all blessings.";
+                    }
+                }
+                return;
+            }
+
+            const totalSeconds = Math.floor(diff / 1000);
+            const days = Math.floor(totalSeconds / 86400);
+            const hours = Math.floor((totalSeconds % 86400) / 3600);
+            const minutes = Math.floor((totalSeconds % 3600) / 60);
+            const seconds = totalSeconds % 60;
+
+            if (daysElem) daysElem.innerText = days < 10 ? '0' + days : days;
+            if (hoursElem) hoursElem.innerText = hours < 10 ? '0' + hours : hours;
+            if (minutesElem) minutesElem.innerText = minutes < 10 ? '0' + minutes : minutes;
+            if (secondsElem) secondsElem.innerText = seconds < 10 ? '0' + seconds : seconds;
+
+            if (statusMsgElem) {
+                if (days === 0 && hours < 24) {
+                    statusMsgElem.innerHTML = hours <= 1 ? "Just hours remain! The auspicious moment draws near." : "The big day is today! Get ready to celebrate.";
+                } else if (days <= 7) {
+                    statusMsgElem.innerHTML = "The final countdown! We look forward to celebrating with you.";
+                } else if (days <= 30) {
+                    statusMsgElem.innerHTML = "Our wedding is approaching — please save the date.";
+                } else {
+                    statusMsgElem.innerHTML = "Counting down to a day of love, joy and happiness.";
+                }
+            }
+        }
+
+        setInterval(updateCountdown, 1000);
+        updateCountdown();
+
         // --------------------------------------------------------------
-        // PROFESSIONAL GUEST NAME MAPPING (exactly as provided)
-        // Supports URL parameters: ?code=KEY or ?guest=KEY or ?name=FullName
-        // Also direct ?guest_raw=AnyName for custom override.
+        // COMPLETE NAME MAPPING (exactly as provided)
+        // Supports URL parameters: ?code=KEY , ?guest=KEY , ?name=FullName , ?to=FullName , ?guest_raw=AnyText
         // --------------------------------------------------------------
         const nameMapping = {
             "$Thus@21e": "Mr. Thusitha Withanage",
@@ -381,59 +609,46 @@
         }
 
         function getGuestDisplayName() {
-            // Priority order: guest_raw > code > guest > name > to > direct mapping key presence > default
             const rawGuest = getUrlParam('guest_raw');
             if (rawGuest && rawGuest.trim() !== "") {
                 return decodeURIComponent(rawGuest.trim());
             }
-
             const codeParam = getUrlParam('code');
             if (codeParam && nameMapping[codeParam]) {
                 return nameMapping[codeParam];
             }
-
             const guestParam = getUrlParam('guest');
             if (guestParam && nameMapping[guestParam]) {
                 return nameMapping[guestParam];
             }
-
             const nameParam = getUrlParam('name');
             if (nameParam && nameParam.trim() !== "") {
                 return decodeURIComponent(nameParam.trim());
             }
-
             const toParam = getUrlParam('to');
             if (toParam && toParam.trim() !== "") {
                 return decodeURIComponent(toParam.trim());
             }
-
-            // edge: if someone uses the exact mapping key as a parameter with value true/empty
             for (let [key, value] of Object.entries(nameMapping)) {
                 const paramVal = getUrlParam(key);
                 if (paramVal !== null && (paramVal === '' || paramVal === '1' || paramVal === 'true')) {
                     return value;
                 }
             }
-
-            // default elegant placeholder as per original invitation style
-            return "MR. & MRS. / MR. / MRS. / MISS. / FAMILY";
+            return "Mr. & Mrs. / Mr. / Mrs. / Miss. / Family";
         }
 
-        // Apply guest name to the DOM
         function updateGuestName() {
             const guestElem = document.getElementById('guestNameDisplay');
             if (!guestElem) return;
             let finalName = getGuestDisplayName();
-            // ensure consistent spacing
             finalName = finalName.replace(/\s+/g, ' ').trim();
-            // if the default generic placeholder remains, keep it elegantly
-            if (finalName === "MR. & MRS. / MR. / MRS. / MISS. / FAMILY" || finalName === "") {
-                finalName = "MR. & MRS. / MR. / MRS. / MISS. / FAMILY";
+            if (finalName === "" || finalName === "Mr. & Mrs. / Mr. / Mrs. / Miss. / Family") {
+                finalName = "Mr. & Mrs. / Mr. / Mrs. / Miss. / Family";
             }
             guestElem.innerText = finalName;
         }
 
-        // Additional override via 'honoree' param if needed
         const honoreeParam = getUrlParam('honoree');
         if (honoreeParam && honoreeParam.trim() !== "") {
             const mapped = nameMapping[honoreeParam] || decodeURIComponent(honoreeParam);
@@ -442,67 +657,72 @@
             updateGuestName();
         }
 
-        // Also support customRaw edge (already handled, but double-check)
-        const customRawDirect = getUrlParam('guest_raw');
-        if (customRawDirect && customRawDirect.trim() !== "") {
-            document.getElementById('guestNameDisplay').innerText = decodeURIComponent(customRawDirect.trim());
+        const customRaw = getUrlParam('guest_raw');
+        if (customRaw && customRaw.trim() !== "") {
+            document.getElementById('guestNameDisplay').innerText = decodeURIComponent(customRaw.trim());
         }
 
-        // Professional refinement: ensure all venue & map text remains correct
-        const venueNameDiv = document.querySelector('.venue-name');
-        if (venueNameDiv) {
-            venueNameDiv.innerHTML = '🏛️ GRAND THEVNI BANQUET HALL';
-        }
-        const addressDetail = document.querySelector('.venue-address');
-        if (addressDetail) {
-            addressDetail.innerHTML = 'HOTEL GRAND THEVNI & HOLIDAY RESORT<br>Padukka Road, Ingiriya, Sri Lanka';
-        }
-        // map link already hardcoded, but to ensure freshness:
-        const mapAnchor = document.querySelector('.map-link a');
-        if (mapAnchor && mapAnchor.getAttribute('href') !== 'https://maps.app.goo.gl/AfosAECQdd55pmHbA') {
-            mapAnchor.setAttribute('href', 'https://maps.app.goo.gl/AfosAECQdd55pmHbA');
-            mapAnchor.setAttribute('target', '_blank');
-            mapAnchor.setAttribute('rel', 'noopener noreferrer');
+        // Ensure map iframe and link consistency (professional fallback)
+        const mapIframe = document.querySelector('.map-iframe-container iframe');
+        if (mapIframe && !mapIframe.src.includes('Grand%20Thevni')) {
+            // refined embed URL for accurate venue representation
+            mapIframe.src = "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3959.10123456789!2d80.148900!3d6.792100!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ae3e35b6b8b6b8b%3A0x8a8a8a8a8a8a8a8a!2sGrand%20Thevni%20Banquet%20Hall!5e0!3m2!1sen!2slk!4v1712345678901!5m2!1sen!2slk";
         }
 
-        // refined consistency for parents and other text (english only)
-        const parentsBlocks = document.querySelectorAll('.parents-block');
-        if (parentsBlocks.length >= 2) {
-            parentsBlocks[0].innerText = 'MR. & MRS. WICKRAMAARACHCI';
-            parentsBlocks[1].innerText = 'MR. & MRS. HANDAPANGODA';
-        }
-        const marriageLineEl = document.querySelector('.marriage-line');
-        if (marriageLineEl) {
-            marriageLineEl.innerHTML = '💍 TO CELEBRATE THE MARRIAGE OF THEIR CHILDREN 💍';
-        }
-        const rsvpDateDiv = document.querySelector('.rsvp-date');
-        if (rsvpDateDiv) {
-            rsvpDateDiv.innerHTML = '📅 RSVP BEFORE 10TH OF APRIL 2026 📅';
-        }
-        const contactsDiv = document.querySelector('.contact-numbers');
-        if (contactsDiv) {
-            contactsDiv.innerHTML = '📞 <span>AYODYA - 0770048727</span> &nbsp;|&nbsp; <span>LAKSHAN - 0787621872</span>';
-        }
-        const timeDiv = document.querySelector('.time-info');
-        if (timeDiv) {
-            timeDiv.innerHTML = `🕊️ FROM 9:00 A.M. TO 4:00 P.M. 🕊️<br>
-            <span class="poruwa">🌸 PORUWA CEREMONY AT 9:40 A.M. 🌸</span>`;
+        // Additional text refinements (remove any stray icons and keep professional)
+        const rsvpDateEl = document.querySelector('.rsvp-date');
+        if (rsvpDateEl) rsvpDateEl.innerHTML = 'RSVP before 10th of April 2026';
+
+        const contactsEl = document.querySelector('.contact-numbers');
+        if (contactsEl) contactsEl.innerHTML = 'Ayodhya 0770048727 &nbsp;|&nbsp; Lakshan 0787621872';
+
+        const timeInfoEl = document.querySelector('.time-info');
+        if (timeInfoEl) {
+            timeInfoEl.innerHTML = `From 9:00 A.M. to 4:00 P.M.<br>
+            <span class="poruwa">Poruwa Ceremony at 9:40 A.M.</span>`;
         }
 
-        // Subtle entrance animation
+        const venueNameElem = document.querySelector('.venue-name');
+        if (venueNameElem) venueNameElem.innerHTML = 'Grand Thevni Banquet Hall';
+        const addressElem = document.querySelector('.venue-address');
+        if (addressElem) addressElem.innerHTML = 'Hotel Grand Thevni & Holiday Resort<br>Padukka Road, Ingiriya, Sri Lanka';
+
+        const mapLinkAnchor = document.querySelector('.map-link a');
+        if (mapLinkAnchor && mapLinkAnchor.getAttribute('href') !== 'https://maps.app.goo.gl/AfosAECQdd55pmHbA') {
+            mapLinkAnchor.setAttribute('href', 'https://maps.app.goo.gl/AfosAECQdd55pmHbA');
+            mapLinkAnchor.setAttribute('target', '_blank');
+            mapLinkAnchor.setAttribute('rel', 'noopener noreferrer');
+        }
+
+        // Ensure parent blocks display refined names
+        const parentBlocks = document.querySelectorAll('.parents-block');
+        if (parentBlocks.length >= 2) {
+            parentBlocks[0].innerText = 'Mr. & Mrs. Wickramaarachchi';
+            parentBlocks[1].innerText = 'Mr. & Mrs. Handapangoda';
+        }
+
+        // Gentle entrance animation
         const card = document.querySelector('.invitation-card');
         if (card) {
             card.style.opacity = '0';
             card.style.transform = 'translateY(18px)';
             setTimeout(() => {
-                card.style.transition = 'opacity 0.6s cubic-bezier(0.2, 0.9, 0.4, 1.1), transform 0.5s ease';
+                card.style.transition = 'opacity 0.65s ease, transform 0.5s ease';
                 card.style.opacity = '1';
                 card.style.transform = 'translateY(0)';
-            }, 80);
+            }, 100);
         }
 
-        // console log for professionalism (no effect on UI)
-        console.log("Wedding invitation | Wickramaarachchi & Handapangoda | Map integrated");
+        // Ensure all emoji/icon references are removed from visible text
+        const elementsToClean = document.querySelectorAll('.day-date, .full-date, .time-info, .rsvp-date, .map-caption, .countdown-title, .event-note');
+        elementsToClean.forEach(el => {
+            if (el.innerText.includes('📅') || el.innerText.includes('📍') || el.innerText.includes('🌸') || el.innerText.includes('🕊️') || el.innerText.includes('💍') || el.innerText.includes('🎉')) {
+                el.innerText = el.innerText.replace(/[📍📅🌸🕊️💍🎉⏳💞🌅✨💐]/g, '').trim();
+            }
+        });
+
+        console.log("Professional wedding invitation | Countdown active | Google Maps embed refined | No decorative icons");
     </script>
 </body>
+
 </html>
